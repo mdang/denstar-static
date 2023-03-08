@@ -1,0 +1,657 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: IE Stylesheet
+
+So instead of using the respond.js file to add media query support
+to IE, we're going to use SASS to create an easily readable css file.
+Here, we import all the styles the standard stylesheet gets, only
+without the media queries. No need to worry about editing anything!
+
+******************************************************************/
+/******************************************************************
+IMPORTS & DEPENDENCIES
+Remember, all the BASE styles are called already since IE can
+read those. Below, we need to import only the stuff IE can't
+understand (what's inside the media queries). We also need to
+import the mixins file so SASS can understand the variables.
+******************************************************************/
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Variables
+
+Here is where we declare all our variables like colors, fonts,
+base values, and defaults. We want to make sure this file ONLY
+contains variables that way our files don't get all messy.
+No one likes a mess.
+
+******************************************************************/
+/*********************
+COLORS
+Need help w/ choosing your colors? Try this site out:
+http://0to255.com/
+*********************/
+/*
+Here's a great tutorial on how to
+use color variables properly:
+http://sachagreif.com/sass-color-variables/
+*/
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Typography
+
+Need to import a font or set of icons for your site? Drop them in
+here or just use this to establish your typographical grid. Or not.
+Do whatever you want to...GOSH!
+
+Helpful Articles:
+http://trentwalton.com/2012/06/19/fluid-type/
+http://ia.net/blog/responsive-typography-the-basics/
+http://alistapart.com/column/responsive-typography-is-a-physical-discipline
+
+******************************************************************/
+/*********************
+FONT FACE (IN YOUR FACE)
+*********************/
+/*
+The following is based of Typebase:
+https://github.com/devinhunt/typebase.css
+I've edited it a bit, but it's a nice starting point.
+*/
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Mixins Stylesheet
+
+This is where you can take advantage of Sass' great features: Mixins.
+I won't go in-depth on how they work exactly,
+there are a few articles below that will help do that. What I will
+tell you is that this will help speed up simple changes like
+changing a color or adding CSS3 techniques gradients.
+
+A WORD OF WARNING: It's very easy to overdo it here. Be careful and
+remember less is more.
+
+Helpful:
+http://sachagreif.com/useful-sass-mixins/
+http://thesassway.com/intermediate/leveraging-sass-mixins-for-cleaner-code
+http://web-design-weekly.com/blog/2013/05/12/handy-sass-mixins/
+
+******************************************************************/
+/*********************
+TRANSITION
+*********************/
+/*
+I totally rewrote this to be cleaner and easier to use.
+You'll need to be using Sass 3.2+ for these to work.
+Thanks to @anthonyshort for the inspiration on these.
+USAGE: @include transition(all 0.2s ease-in-out);
+*/
+/*********************
+CSS3 GRADIENTS
+Be careful with these since they can
+really slow down your CSS. Don't overdo it.
+*********************/
+/* @include css-gradient(#dfdfdf,#f8f8f8); */
+/*********************
+BOX SIZING
+*********************/
+/* @include box-sizing(border-box); */
+/* NOTE: value of "padding-box" is only supported in Gecko. So
+probably best not to use it. I mean, were you going to anyway? */
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: IE Grid Styles
+
+Since the example grid is based on media queries, so rather than
+setup some js library that would make IE8 and below understand
+media queries, let's just add some styles that serves a fixed grid.
+
+Again, if you want to roll your own, just remove this junk and put
+whatever you use in here.
+
+******************************************************************/
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: 481px and Up Stylesheet
+
+This stylesheet is loaded for larger devices. It's set to
+481px because at 480px it would load on a landscaped iPhone.
+This isn't ideal because then you would be loading all those
+extra styles on that same mobile connection.
+
+A word of warning. This size COULD be a larger mobile device,
+so you still want to keep it pretty light and simply expand
+upon your base.scss styles.
+
+******************************************************************/
+/*********************
+NAVIGATION STYLES
+*********************/
+/* .menu is clearfixed inside mixins.scss */
+.menu {
+  /* end .menu ul */ }
+  .menu ul {
+    /* end .menu ul li */
+    /* highlight current page */
+    /* end current highlighters */ }
+    .menu ul li {
+      /*
+				plan your menus and drop-downs wisely.
+				*/ }
+      .menu ul li a {
+        /*
+					you can use hover styles here even though this size
+					has the possibility of being a mobile device.
+					*/ }
+
+/* end .menu */
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+/* entry content */
+.entry-content {
+  /* at this larger size, we can start to align images */ }
+  .entry-content .alignleft, .entry-content img.alignleft, .entry-content .alignright, .entry-content img.alignright, .entry-content .aligncenter, .entry-content img.aligncenter {
+    margin: 0 0 .5em 0; }
+
+/* end .entry-content */
+/*********************
+FOOTER STYLES
+*********************/
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Tablet & Small Desktop Stylesheet
+
+Here's where you can start getting into the good stuff.
+This size will work on iPads, other tablets, and desktops.
+So you can start working with more styles, background images,
+and other resources. You'll also notice the grid starts to
+come into play. Have fun!
+
+******************************************************************/
+/*********************
+GENERAL STYLES
+*********************/
+body {
+  font-size: 18px; }
+
+/******************************************************************
+H1, H2, H3, H4, H5 STYLES
+******************************************************************/
+h1, .h1 {
+  font-size: 60px; }
+
+h2, .h2 {
+  font-size: 42px; }
+
+h3, .h3 {
+  font-size: 36px; }
+
+h4, .h4 {
+  font-size: 28px; }
+
+/*********************
+LAYOUT & GRID STYLES
+*********************/
+/* entry content */
+.entry-content {
+  /* at this larger size, we can start to align images */ }
+  .entry-content .alignleft, .entry-content img.alignleft, .entry-content .alignright, .entry-content img.alignright {
+    max-width: 50%; }
+  .entry-content .alignleft, .entry-content img.alignleft {
+    margin: 0 5% 5% 0;
+    display: inline;
+    float: left; }
+  .entry-content .alignright, .entry-content img.alignright {
+    margin: 0 0 5% 5%;
+    display: inline;
+    float: right; }
+  .entry-content .aligncenter, .entry-content img.aligncenter {
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    clear: both; }
+
+/* end .entry-content */
+/*********************
+HEADER STYLES
+*********************/
+/*********************
+HOMEPAGE STYLES
+*********************/
+.homeBanner .hb-wrapper .hb1 {
+  right: 50%; }
+
+.homeBanner .hb-wrapper .hb2 {
+  display: block;
+  right: 0;
+  left: 50%; }
+
+.homeBanner .hb-inner p {
+  font-size: 26px; }
+
+.homeTagline .ht-inner {
+  display: flex;
+  align-items: center; }
+
+.homeTagline .ht-title {
+  flex: 1 1 50%;
+  max-width: 100%; }
+
+.homeTagline .ht-blurb {
+  flex: 0 0 auto;
+  padding: 0 3em;
+  margin: 0; }
+  .homeTagline .ht-blurb p {
+    margin: 0; }
+
+.homeVideo .hv-wrapper {
+  padding: 50px; }
+  .homeVideo .hv-wrapper:hover .hvw-l {
+    top: 100px;
+    right: 40%; }
+  .homeVideo .hv-wrapper:hover .hvw-r {
+    bottom: 100px;
+    left: 40%; }
+  .homeVideo .hv-wrapper:hover .hvw-lc1, .homeVideo .hv-wrapper:hover .hvw-lc2, .homeVideo .hv-wrapper:hover .hvw-rc1, .homeVideo .hv-wrapper:hover .hvw-rc2 {
+    height: 220px; }
+  .homeVideo .hv-wrapper .hvw {
+    transition: all ease .7s; }
+  .homeVideo .hv-wrapper .hvw-l {
+    right: 45%; }
+  .homeVideo .hv-wrapper .hvw-r {
+    left: 45%; }
+  .homeVideo .hv-wrapper .hvw-lc1, .homeVideo .hv-wrapper .hvw-lc2 {
+    top: 17px;
+    left: 17px;
+    width: 14px;
+    height: 170px; }
+  .homeVideo .hv-wrapper .hvw-lc2 {
+    left: 3px; }
+  .homeVideo .hv-wrapper .hvw-rc1, .homeVideo .hv-wrapper .hvw-rc2 {
+    bottom: 20px;
+    right: 20px;
+    width: 10px;
+    height: 170px; }
+  .homeVideo .hv-wrapper .hvw-rc2 {
+    right: 10px; }
+
+.homeTriImage .ht-wrapper .htw-images {
+  display: flex; }
+  .homeTriImage .ht-wrapper .htw-images .htwi {
+    flex: 1 1 50%;
+    width: 100%; }
+  .homeTriImage .ht-wrapper .htw-images .htwi2 {
+    display: block; }
+
+/*********************
+INTERNAL STYLES
+*********************/
+#inner-content #main {
+  padding: 20px 40px; }
+
+/*********************
+SIDEBARS & ASIDES
+*********************/
+.sidebar {
+  margin-top: 2.2em; }
+
+.widgettitle {
+  border-bottom: 2px solid #444;
+  margin-bottom: 0.75em; }
+
+.widget {
+  padding: 0 10px;
+  margin: 2.2em 0; }
+  .widget ul li {
+    margin-bottom: 0.75em;
+    /* deep nesting */ }
+    .widget ul li ul {
+      margin-top: 0.75em;
+      padding-left: 1em; }
+
+/*********************
+FOOTER STYLES
+*********************/
+.footerButtons .fb-wrapper {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between; }
+
+.footerButtons .fb-ind {
+  flex: 0 0 32.33%; }
+  .footerButtons .fb-ind .fbi-inner h2 {
+    font-size: 38px; }
+
+.copyright {
+  text-align: left; }
+  .copyright span {
+    float: right; }
+
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Desktop Stylsheet
+
+This is the desktop size. It's larger than an iPad so it will only
+be seen on the Desktop.
+
+******************************************************************/
+/*********************
+GENERAL STYLES
+*********************/
+/******************************************************************
+H1, H2, H3, H4, H5 STYLES
+******************************************************************/
+h1, .h1 {
+  font-size: 68px; }
+
+/*********************
+HEADER STYLES
+*********************/
+.headerTopbar {
+  background: #F3F7FF;
+  padding: 10px 0; }
+  .headerTopbar .ht-inner {
+    display: flex;
+    align-items: center; }
+  .headerTopbar .desk-nav {
+    flex: 1 1 auto; }
+  .headerTopbar .ht-info {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    line-height: 1;
+    color: #7C828F;
+    text-align: right; }
+    .headerTopbar .ht-info .hti-addr {
+      padding-left: 20px; }
+    .headerTopbar .ht-info .hti-phone {
+      padding-left: 20px;
+      font-size: 22px;
+      font-weight: bold; }
+
+.header {
+  margin: 0; }
+
+#inner-header {
+  display: flex;
+  align-items: center;
+  padding: 20px 0; }
+  #inner-header #logo {
+    flex: 1 1 auto;
+    text-align: left;
+    padding: 0; }
+
+/*********************
+HOMEPAGE STYLES
+*********************/
+.homeBanner .hb-inner {
+  padding: 170px 0; }
+  .homeBanner .hb-inner h1 {
+    line-height: 1; }
+  .homeBanner .hb-inner p {
+    font-size: 32px;
+    line-height: 1.2; }
+
+.homeVideo {
+  margin: 80px 0; }
+  .homeVideo .hv-wrapper .hvw-l {
+    right: 47%;
+    top: 140px; }
+  .homeVideo .hv-wrapper .hvw-r {
+    left: 47%;
+    bottom: 140px; }
+  .homeVideo .hv-wrapper .hvw-lc1, .homeVideo .hv-wrapper .hvw-lc2 {
+    height: 176px; }
+  .homeVideo .hv-wrapper .hvw-rc1, .homeVideo .hv-wrapper .hvw-rc2 {
+    height: 176px; }
+
+.homeDuocontent {
+  margin: 150px 0; }
+  .homeDuocontent .hd-wrapper .hdw-content {
+    display: flex;
+    position: relative; }
+    .homeDuocontent .hd-wrapper .hdw-content .hdwc-title {
+      position: absolute;
+      top: 30px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      z-index: 5; }
+      .homeDuocontent .hd-wrapper .hdw-content .hdwc-title .overlay {
+        left: 0;
+        right: 50%;
+        top: 0;
+        bottom: 0;
+        mix-blend-mode: difference;
+        z-index: 6;
+        background: #E0E4EE; }
+      .homeDuocontent .hd-wrapper .hdw-content .hdwc-title h2 {
+        color: white;
+        font-size: 60px;
+        margin: 0; }
+    .homeDuocontent .hd-wrapper .hdw-content .hdwc-left {
+      position: relative;
+      z-index: 4;
+      flex: 1 1 50%;
+      padding: 150px 40px; }
+    .homeDuocontent .hd-wrapper .hdw-content .hdwc-right {
+      flex: 1 1 50%;
+      position: relative;
+      z-index: 4;
+      display: flex;
+      align-items: center;
+      padding: 150px 40px; }
+      .homeDuocontent .hd-wrapper .hdw-content .hdwc-right .hdwcr-inner {
+        flex: 1; }
+    .homeDuocontent .hd-wrapper .hdw-content .hdwc-btn {
+      position: absolute;
+      bottom: 40px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      z-index: 5; }
+      .homeDuocontent .hd-wrapper .hdw-content .hdwc-btn .btn {
+        padding: 8px 80px; }
+
+.homeTriImage .ht-wrapper .htw-images:hover .htwi {
+  transform: scale(0.95); }
+
+.homeTriImage .ht-wrapper .htw-images .htwi {
+  flex: 1 1 33.33%;
+  position: relative;
+  z-index: 1;
+  transition: all ease .5s; }
+  .homeTriImage .ht-wrapper .htw-images .htwi:hover {
+    transform: scale(1.05);
+    z-index: 2; }
+
+.homeTriImage .ht-wrapper .htw-images .htwi3 {
+  display: block; }
+
+/*********************
+INTERNAL STYLES
+*********************/
+.intBanner .ib-inner {
+  display: flex; }
+
+.intBanner .ib-content {
+  flex: 1 1 50%; }
+  .intBanner .ib-content p {
+    font-size: 28px; }
+
+.intBanner .ib-image {
+  flex: 1 1 50%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; }
+
+#inner-content {
+  padding: 50px;
+  margin: 80px auto 100px; }
+  #inner-content .hvw-lc1, #inner-content .hvw-lc2 {
+    top: 19px;
+    left: 19px;
+    width: 12px;
+    height: 176px; }
+  #inner-content .hvw-lc2 {
+    left: 7px; }
+  #inner-content .hvw-rc1, #inner-content .hvw-rc2 {
+    bottom: 20px;
+    right: 20px;
+    width: 10px;
+    height: 176px; }
+  #inner-content .hvw-rc2 {
+    right: 10px; }
+  #inner-content #main {
+    padding: 20px 40px; }
+
+/*********************
+NAVIGATION STYLES
+*********************/
+.nav {
+  border: 0;
+  position: relative;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* end .menu ul li */
+  /* highlight current page */
+  /* end current highlighters */ }
+  .nav ul {
+    background: #2B3241;
+    margin-top: 0; }
+  .nav li {
+    position: relative;
+    clear: none;
+    /*
+		plan your menus and drop-downs wisely.
+		*/
+    /* showing sub-menus */ }
+    .nav li a {
+      border-bottom: 0;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 300;
+      color: #7C828F;
+      /*
+			you can use hover styles here even though this size
+			has the possibility of being a mobile device.
+			*/ }
+      .nav li a:hover {
+        color: white; }
+    .nav li:hover {
+      background: #0089BC; }
+      .nav li:hover a {
+        color: white; }
+    .nav li ul.sub-menu,
+    .nav li ul.children {
+      margin-top: 0;
+      border-top: 0;
+      position: absolute;
+      visibility: hidden;
+      z-index: 8999;
+      padding-left: 0;
+      top: 100%;
+      left: 0;
+      overflow: visible;
+      /* highlight sub-menu current page */ }
+      .nav li ul.sub-menu li,
+      .nav li ul.children li {
+        /*
+				if you need to go deeper, go nuts
+				just remember deeper menus suck
+				for usability. k, bai.
+				*/ }
+        .nav li ul.sub-menu li a,
+        .nav li ul.children li a {
+          padding-left: 10px;
+          border-right: 0;
+          display: block;
+          width: 220px;
+          float: none; }
+        .nav li ul.sub-menu li:hover,
+        .nav li ul.children li:hover {
+          background: #0089BC; }
+        .nav li ul.sub-menu li:last-child a,
+        .nav li ul.children li:last-child a {
+          border-bottom: 0; }
+        .nav li ul.sub-menu li ul,
+        .nav li ul.children li ul {
+          top: 0;
+          left: 100%; }
+    .nav li:hover > ul {
+      top: 100%;
+      visibility: visible; }
+
+/* end .nav */
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+/*********************
+FOOTER STYLES
+*********************/
+.footerInfo {
+  margin: 0;
+  padding: 4em 0; }
+  .footerInfo .fi-leftbox {
+    right: calc(48% - 20px); }
+  .footerInfo .fi-rightbox {
+    left: calc(52% + 20px);
+    bottom: 190px; }
+  .footerInfo .fi-inner {
+    display: flex;
+    align-items: center; }
+  .footerInfo .fi-leftcontent {
+    flex: 0 0 52%; }
+  .footerInfo .fi-rightcontent {
+    flex: 0 0 48%;
+    padding: 40px 40px 40px 0;
+    margin-left: -40px; }
+
+.footerMap {
+  margin-top: -240px; }
+  .footerMap iframe {
+    width: 100%;
+    height: 660px; }
+
+/*
+you can call the larger styles if you want, but there's really no need
+*/
+/******************************************************************
+ADDITIONAL IE FIXES
+These fixes are now ONLY seen by IE, so you don't have to worry
+about using prefixes, although it's best practice. For more info
+on using Modernizr classes, check out this link:
+http://www.modernizr.com/docs/
+******************************************************************/
+/*
+For example, you can use something like:
+
+.no-textshadow .class { ... }
+
+You can also target specific versions by using the classes applied to
+the html element. These can sometimes change, so take a look inside the
+header.php file to see what they are:
+
+
+.lt-ie8 .class { ... }
+
+*/
